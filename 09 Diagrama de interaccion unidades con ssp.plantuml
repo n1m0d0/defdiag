@@ -1,0 +1,50 @@
+@startuml Diagrama_interaccion
+skinparam Style strictuml
+skinparam SequenceMessageAlignment center
+
+mainframe **Diagrama** de Interacción
+
+entity Unidad_de_promoción_y_educación as proedu
+entity Unidad_de_difusión as difu
+entity Unidad_de_derechos_humanos_de_mujeres as mujer
+entity Unidad_de_niñez_y_adolecencia as niadol
+entity Unidad_de_los_derechos_de_las_naciones_y_pueblos_originarios as originario
+entity Unidad_de_población_en_situación_de_vulnerabilidad as vul
+entity Unidad_de_defensa_de_los_derechos_humanos as derhum
+entity Unidad_de_derechos_sociales as dersoc 
+entity Unidad_de_movilidad_humana as movil 
+entity Unidad_de_asuntos_constitucionales_y_derechos_humanos as consti
+entity Unidad_de_mecanismo as mecanis
+entity Unidad_de_prevención_pacífica_de_la_conflictividad as conflict
+entity Delegaciones as deleg
+collections SSP 
+
+mujer->SSP:envía informe defensorial
+SSP->deleg:notifica
+SSP->mujer:envia informe de cumplimiento de determinación
+niadol->SSP:envía informe defensorial
+SSP->deleg:notifica
+SSP->niadol:envia informe de cumplimiento de determinación
+niadol->SSP:solicita informe estadistico
+SSP->niadol:entrega informe estadístico
+originario->SSP:envía informe defensorial
+SSP->deleg:notifica
+SSP->originario:envia informe de cumplimiento de determinación
+originario->SSP:solicita informe estadistico
+SSP->originario:entrega informe estadístico
+consti->SSP:envía informe defensorial
+SSP->deleg:notifica
+SSP->consti:envia informe de cumplimiento de determinación
+consti->SSP:solicita informe estadistico
+SSP->consti:entrega informe estadístico
+mecanis->SSP:solicita informe estadistico
+SSP->mecanis:entrega informe estadístico
+conflict->SSP:solicita informe estadistico
+SSP->conflict:entrega informe estadístico
+SSP->conflict:solicita información de conflictos
+conflict->SSP:envía información
+deleg->SSP:registro de casos
+SSP->deleg:envia informe estadístico
+
+
+@enduml

@@ -1,0 +1,23 @@
+@startuml Denuncia_Oficinas
+skinparam Style strictuml
+skinparam SequenceMessageAlignment center
+
+mainframe **Denuncia** en Oficinas
+
+actor Presentante as pre
+actor Operador_SSP as opssp
+collections SSP 
+
+pre -> opssp : reunion con operario
+opssp -> pre : solicita informacion
+pre -> opssp : entrega relación del hecho
+opssp -> pre : orientación
+opssp -> SSP: registra caso
+SSP->opssp: entrega formulario de registro
+opssp->pre:entrega formulario impreso para firma
+pre->opssp:entrega formulario firmado
+
+
+
+
+@enduml

@@ -1,0 +1,28 @@
+@startuml Denuncia_Escrita
+skinparam Style strictuml
+skinparam SequenceMessageAlignment center
+
+mainframe **Denuncia** Escrita
+
+actor Presentante as pre
+entity Defensoría as def
+actor Operador_SSP as opssp
+collections SSP 
+
+
+pre -> def: escribe carta
+def->opssp: asigna
+opssp->pre:comunicación con presentante
+opssp->pre:concertar reunión
+pre->opssp:reunión con operario
+opssp -> pre : solicita informacion
+pre->opssp:relacion de hecho
+opssp->pre:orientacion de hecho
+opssp->SSP:registra caso
+SSP->opssp: entrega formulario de registro
+opssp->pre:entrega formulario impreso para firma
+pre->opssp:entrega formulario firmado
+
+
+
+@enduml

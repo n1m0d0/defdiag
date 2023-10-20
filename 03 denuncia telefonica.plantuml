@@ -1,0 +1,31 @@
+@startuml Denuncia_Linea_Gratuita
+skinparam Style strictuml
+skinparam SequenceMessageAlignment center
+
+mainframe **Denuncia** vía Línea_Gratuita
+
+actor Presentante as pre
+collections Línea_Gratuita
+actor Telefonista as tel
+actor Operador_SSP as opssp
+collections SSP 
+
+
+pre -> Línea_Gratuita : llama
+Línea_Gratuita -> tel : comunica
+tel -> pre : solicita información
+pre -> tel : envía información solicitada
+tel->opssp:envía información de presentante
+opssp->pre:comunicación con presentante
+opssp->pre:concertar reunión
+pre->opssp:reunión con operario
+opssp -> pre : solicita informacion
+pre->opssp:relacion de hecho
+opssp->pre:orientacion de hecho
+opssp->SSP:registra caso
+SSP->opssp: entrega formulario de registro
+opssp->pre:entrega formulario impreso para firma
+pre->opssp:entrega formulario firmado
+
+
+@enduml

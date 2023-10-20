@@ -1,0 +1,35 @@
+@startuml Denuncia_Whatsapp
+skinparam Style strictuml
+skinparam SequenceMessageAlignment center
+
+mainframe **Denuncia** vía Whatsapp
+
+actor Presentante as pre
+collections Whatsapp
+actor Supervisor as sup
+actor Operador_SSP as opssp
+collections SSP 
+
+
+pre -> Whatsapp : envía mensaje inicial
+Whatsapp -> sup : notifica
+sup -> Whatsapp : solicita información
+Whatsapp->pre: notifica
+pre -> Whatsapp : envía información solicitada
+Whatsapp->sup: notifica
+sup->Whatsapp:asigna caso
+Whatsapp->opssp: notifica
+opssp->pre:comunicación con presentante
+opssp->pre:concertar reunión
+pre->opssp:reunión con operario
+opssp -> pre : solicita informacion
+pre->opssp:relacion de hecho
+opssp->pre:orientacion de hecho
+opssp->SSP:registra caso
+SSP->opssp: entrega formulario de registro
+opssp->pre:entrega formulario impreso para firma
+pre->opssp:entrega formulario firmado
+
+
+
+@enduml

@@ -1,0 +1,24 @@
+@startuml Diagrama_informes
+skinparam Style strictuml
+skinparam SequenceMessageAlignment center
+
+mainframe **Diagrama** Informes Defensoriales
+
+entity Unidades_Sustantivas as unid
+actor Supervisor as sup
+actor Operador_SSP as opssp
+
+unid->sup:envía informe defensorial
+unid->sup:envia guías de cumplimiento
+sup->opssp:transfiere determinaciones
+opssp->opssp:tareas de seguimiento
+opssp->sup:remite informe de cumplimiento de determinaciones
+sup->unid:envía informe
+
+
+
+
+
+
+
+@enduml

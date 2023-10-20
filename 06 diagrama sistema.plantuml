@@ -1,0 +1,50 @@
+@startuml Diagrama_Sistema
+skinparam Style strictuml
+skinparam SequenceMessageAlignment center
+
+mainframe **Diagrama** Sistema
+
+actor Operador_SSP as opssp
+collections Página_de_Login as login
+collections Usuarios_Registrados as regis
+collections Servidor_Web as web
+collections Formularios_Nuevo_Caso as form
+collections Guardar_Formulario as save
+database Base_de_Datos as BD
+collections Mis_Casos as mcasos
+collections Aprobacion_de_Conclusión_de_Casos as apro
+actor Supervisor as sup
+
+
+opssp->login:ingresa usuario y contraseña
+login->regis:busca
+regis->web:inicio de sesión
+web->opssp:notifica
+opssp->form:Seleccion caso (oficio o solicitud)
+form->opssp:entrega formulario seleccionado
+opssp->form:llenado de formulario
+opssp->save:selecciona
+save->BD:registra
+BD->mcasos:presenta
+opssp->mcasos:selección caso
+mcasos->opssp:procesamiento de caso
+opssp->mcasos:selección de proceso (investigacion,orientación,gestión,rechazo)
+mcasos->opssp:presenta formulario por opción
+opssp->mcasos:selecciona acciones defensoriales
+opssp->mcasos:crea acciones
+mcasos->apro:envía
+apro->sup:notifica
+sup->apro:selecciona aprobación
+apro->mcasos:registra aprobación
+mcasos->opssp:notifica
+
+
+
+
+
+
+
+
+
+
+@enduml

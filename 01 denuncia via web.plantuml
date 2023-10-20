@@ -1,0 +1,37 @@
+@startuml Denuncia_Web
+skinparam Style strictuml
+skinparam SequenceMessageAlignment center
+
+mainframe **Denuncia** vía Web
+
+actor Presentante as pre
+collections Web
+actor Supervisor as sup
+actor Operador_SSP as opssp
+collections SSP 
+
+
+pre -> Web : ingresa
+pre -> Web : selecciona denuncia en línea
+Web -> pre : habilita formulario
+pre -> Web : llena formulario
+Web->sup: envía correo
+sup->opssp:asigna caso
+opssp->pre:comunicación con presentante
+opssp->pre:concertar reunión
+pre->opssp:reunión con operario
+opssp -> pre : solicita informacion
+pre->opssp:relacion de hecho
+opssp->pre:orientacion de hecho
+opssp->SSP:registra caso
+SSP->opssp: entrega formulario de registro
+opssp->pre:entrega formulario impreso para firma
+pre->opssp:entrega formulario firmado
+
+
+
+
+
+
+
+@enduml
