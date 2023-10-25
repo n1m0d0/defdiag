@@ -1,0 +1,30 @@
+@startuml Denuncia_web
+skinparam Style strictuml
+skinparam SequenceMessageAlignment center
+
+mainframe **Denuncia** vía web
+
+actor Presentante as pre
+collections Pagina_web as web
+actor Operador_SSP as opssp
+collections SSP 
+collections API_SEGIP as segip
+
+pre -> web : ingresa
+pre -> web : selecciona denuncia en línea
+web -> pre : habilita formulario
+pre -> web : llena formulario
+web -> segip : envia de datos
+segip -> web : validación 
+web->SSP : pre-registro
+pre->opssp : reunión con operario
+opssp->SSP : revisa pre-registro
+opssp -> pre : solicita información complementaria
+pre->opssp : Brinda información
+opssp->pre : orientacion de hecho
+opssp->SSP : registra caso
+SSP->opssp : entrega formulario de registro
+opssp->pre : entrega formulario impreso para firma
+pre->opssp : entrega formulario firmado
+
+@enduml
