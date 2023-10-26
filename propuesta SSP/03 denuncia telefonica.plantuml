@@ -1,0 +1,41 @@
+@startuml Denuncia_Linea_Gratuita
+skinparam Style strictuml
+skinparam SequenceMessageAlignment center
+
+mainframe **Denuncia** vía Línea_Gratuita
+
+actor Presentante as pre
+collections Línea_Gratuita
+entity Defensa as def
+collections Pagina_Web as web
+collections SSP 
+actor Operador_SSP as opssp
+collections API_SEGIP as segip
+
+
+pre -> Línea_Gratuita : llama
+Línea_Gratuita -> def : comunica
+def -> pre : solicita información
+pre -> def : envía información solicitada
+def -> web : ingresa
+def -> web : selecciona denuncia en línea
+web -> def : habilita formulario
+def -> web : llena formulario
+web -> segip : envia de datos
+segip -> web : validación 
+web->SSP : crea pre-registro
+SSP->web : notifica
+web->def : muestra indicaciones
+def->pre : comunica indicaciones
+pre->opssp : reunión con operario
+opssp->SSP : busca pre-registro
+SSP->opssp : muestra informacion
+opssp -> pre : solicita información complementaria
+pre->opssp : brinda información
+opssp->pre : orientación
+opssp->SSP : registra caso
+SSP->opssp : entrega formulario de registro
+opssp->pre : entrega formulario impreso para firma
+pre->opssp : entrega formulario firmado
+
+@enduml

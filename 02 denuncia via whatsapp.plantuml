@@ -6,19 +6,21 @@ mainframe **Denuncia** vía Whatsapp
 
 actor Presentante as pre
 collections Whatsapp
+entity Defensa as def
 actor Supervisor as sup
 actor Operador_SSP as opssp
 collections SSP 
 
 
 pre -> Whatsapp : envía mensaje inicial
-Whatsapp -> sup : notifica
-sup -> Whatsapp : solicita información
+Whatsapp -> def : notifica
+def -> Whatsapp : solicita información
 Whatsapp->pre: notifica
 pre -> Whatsapp : envía información solicitada
+Whatsapp->def: notifica
+def-> Whatsapp: envia caso
 Whatsapp->sup: notifica
-sup->Whatsapp:asigna caso
-Whatsapp->opssp: notifica
+sup->opssp:asigna caso
 opssp->pre:comunicación con presentante
 opssp->pre:concertar reunión
 pre->opssp:reunión con operario

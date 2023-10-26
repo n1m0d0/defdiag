@@ -17,7 +17,4 @@ SSP->opssp: entrega formulario de registro
 opssp->pre:entrega formulario impreso para firma
 pre->opssp:entrega formulario firmado
 
-
-
-
 @enduml

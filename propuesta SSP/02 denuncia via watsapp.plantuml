@@ -1,0 +1,43 @@
+@startuml Denuncia_Whatsapp
+skinparam Style strictuml
+skinparam SequenceMessageAlignment center
+
+mainframe **Denuncia** vía Whatsapp
+
+actor Presentante as pre
+collections Whatsapp
+entity Defensa as def
+collections Pagina_Web as web
+collections SSP 
+actor Operador_SSP as opssp
+collections API_SEGIP as segip
+
+
+pre -> Whatsapp : envía mensaje inicial
+Whatsapp -> def : notifica
+def -> Whatsapp : solicita información
+Whatsapp->pre: notifica
+pre -> Whatsapp : envía información solicitada
+def -> web : ingresa
+def -> web : selecciona denuncia en línea
+web -> def : habilita formulario
+def -> web : llena formulario
+web -> segip : envia de datos
+segip -> web : validación 
+web->SSP : crea pre-registro
+SSP->web : notifica
+web->def : muestra indicaciones
+def->Whatsapp : comunica indicaciones
+Whatsapp->pre: notifica
+pre->opssp : reunión con operario
+opssp->SSP : busca pre-registro
+SSP->opssp : muestra informacion
+opssp -> pre : solicita información complementaria
+pre->opssp : brinda información
+opssp->pre : orientación
+opssp->SSP : registra caso
+SSP->opssp : entrega formulario de registro
+opssp->pre : entrega formulario impreso para firma
+pre->opssp : entrega formulario firmado
+
+@enduml

@@ -1,0 +1,40 @@
+@startuml Diagrama_Sistema
+skinparam Style strictuml
+skinparam SequenceMessageAlignment center
+
+mainframe **Diagrama** Sistema
+
+actor Operador_SSP as opssp
+collections SSP
+actor Supervisor_SSP as supssp
+collections API_SEGIP as segip
+collections AGETIC as agetic
+
+opssp->SSP: ingresa
+SSP->opssp: muestra casos en curso
+opssp->SSP: selecciona crear caso
+SSP->opssp: envia formulario
+opssp->SSP: llena formulario
+SSP->segip: envia informacion
+segip->SSP: validacion / envio de informacion
+SSP->SSP: registra caso
+SSP->agetic: envia formulario para su firma digital
+agetic->SSP: formulario firmado 
+SSP->opssp: notifica
+opssp->SSP: selecciona tipo de proceso
+SSP->opssp: envia formulario segun tipo de proceso
+opssp->SSP: seleciona acciones defensoriales
+SSP->opssp: envia formulario de acciones defensoriales
+opssp->SSP: registra acciones defensoriales
+opssp->SSP: selcciona conclusión de caso
+SSP->supssp: muestra casos para conclusión
+supssp->SSP: selecciona caso
+SSP->supssp: muestra caso
+supssp->SSP: validad
+SSP->opssp: notifica
+opssp->SSP: seleciona formulario de conclusión
+SSP->agetic: envia formulario para su firma digital
+agetic->SSP: formulario firmado
+SSP->opssp: notifica
+
+@enduml

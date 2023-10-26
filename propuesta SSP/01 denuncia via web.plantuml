@@ -16,12 +16,15 @@ web -> pre : habilita formulario
 pre -> web : llena formulario
 web -> segip : envia de datos
 segip -> web : validación 
-web->SSP : pre-registro
+web->SSP : crea pre-registro
+SSP->web : notifica
+web->pre : Muestra Indicaciones
 pre->opssp : reunión con operario
-opssp->SSP : revisa pre-registro
+opssp->SSP : busca pre-registro
+SSP->opssp : Muestra informacion
 opssp -> pre : solicita información complementaria
 pre->opssp : Brinda información
-opssp->pre : orientacion de hecho
+opssp->pre : orientación
 opssp->SSP : registra caso
 SSP->opssp : entrega formulario de registro
 opssp->pre : entrega formulario impreso para firma
