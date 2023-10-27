@@ -1,0 +1,55 @@
+@startuml Diagrama_Sistema
+skinparam Style strictuml
+skinparam SequenceMessageAlignment center
+
+mainframe **Diagrama** Sistema
+
+actor Operador_SSP as opssp
+collections SSP
+actor Supervisor_SSP as supssp
+actor Supervisor_Constitucional as supconsti
+actor Operador_Constitucional as opconsti
+collections API_SEGIP as segip
+collections AGETIC as agetic
+
+opssp->SSP: ingresa
+SSP->opssp: muestra casos en curso
+opssp->SSP: selecciona crear caso
+SSP->opssp: envia formulario
+opssp->SSP: registra formulario
+SSP->segip: envia informacion
+segip->SSP: validacion / envio de informacion
+SSP->SSP: registra caso
+SSP->agetic: envia formulario para su firma digital
+agetic->SSP: formulario firmado 
+SSP->opssp: notifica
+opssp->SSP: selecciona tipo de proceso
+SSP->opssp: envia formulario segun tipo de proceso
+opssp->SSP: seleciona acciones defensoriales
+SSP->opssp: envia formulario de acciones defensoriales
+opssp->SSP: registra acciones defensoriales
+opssp->SSP: selecciona enviar a consulta constitucional
+SSP->supconsti: notifica
+supconsti->SSP: seleciona casos de consultas
+supconsti->SSP: valida
+supconsti->SSP: designa operador constitucional
+SSP->opconsti: notifica
+opconsti->opconsti: procesa
+opconsti->SSP: selecciona caso
+opconsti->SSP: envia acciones / documento constitucional
+SSP->opssp: notifica
+opssp->SSP: selecciona acciones defensoriales
+opssp->SSP: registra acciones defensoriales
+opssp->SSP: selcciona conclusión de caso
+SSP->supssp: muestra casos para conclusión
+supssp->SSP: selecciona caso
+SSP->supssp: muestra caso
+supssp->SSP: validad
+SSP->SSP: registra conclusión
+SSP->opssp: notifica
+opssp->SSP: seleciona formulario de conclusión
+SSP->agetic: envia formulario para su firma digital
+agetic->SSP: formulario firmado
+SSP->opssp: notifica
+
+@enduml
