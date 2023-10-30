@@ -9,7 +9,7 @@ actor Operador_SSP as opssp
 collections SSP 
 
 pre -> opssp : reunion con operario
-opssp -> pre : solicita informacion
+opssp -> pre : solicita información
 pre -> opssp : entrega relación del hecho
 opssp -> pre : orientación
 opssp -> SSP: registra caso

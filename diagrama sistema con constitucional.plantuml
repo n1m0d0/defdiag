@@ -1,0 +1,36 @@
+@startuml Diagrama_Sistema
+skinparam Style strictuml
+skinparam SequenceMessageAlignment center
+
+mainframe **Diagrama** Sistema
+
+actor Operador_SSP as opssp
+collections SSP
+actor Supervisor_SSP as supssp
+actor Delegado_o_Cordinador as delcor
+entity Constitucional as const
+
+opssp->SSP: crear caso
+opssp->SSP: registro del peticionario
+opssp->SSP: registro de institución 
+opssp->SSP: registro de archivo
+opssp->SSP: registro de derecho vulnerado
+opssp->SSP: registro de grupo vulnerable
+opssp->SSP: selección de tipo de proceso
+opssp->opssp: realiza acciones defensoriales
+opssp->SSP: registro de acciones defensoriales
+opssp->const: solicitud de consulta constitucional
+const->const: procesamiento de la solicitud
+const->supssp: informe defensorial
+const->supssp: determinaciones
+supssp->opssp: determinaciones a cumplir
+opssp->opssp: realiza determinaciones
+opssp->SSP: solitud de conclusión del caso
+SSP->supssp: notifica
+supssp->SSP: validación de conclusión del caso
+supssp->SSP: solicitud de archivo del caso
+SSP->delcor: notifica
+delcor->SSP: validación de archivo del caso
+opssp->SSP: imprime formulario de conclusión
+
+@enduml

@@ -9,23 +9,24 @@ entity Defensoría as def
 actor Supervisor as sup
 actor Operador_SSP as opssp
 collections API_SEGIP as segip
-collections SSP 
+collections SSP
 
 
-pre -> def: escribe carta
-def->sup:envía información de presentante
+pre -> def : escribe carta
+def->sup :envía información de presentante
 sup->opssp : designa
-opssp->pre:comunicación con presentante
-opssp->pre:concertar reunión
-pre->opssp:reunión con operario
+opssp->pre : comunicación con presentante
+opssp->pre : concertar reunión
+pre->opssp : reunión con operario
 opssp -> pre : solicita informacion
-pre->opssp:relacion de hecho
-opssp->pre:orientación
+pre->opssp : relación de hecho
+opssp->pre : orientación
+opssp -> SSP : llena formulario
 opssp -> segip : envia de datos
-segip -> opssp : validación 
-opssp->SSP:registra caso
-SSP->opssp: entrega formulario de registro
-opssp->pre:entrega formulario impreso para firma
-pre->opssp:entrega formulario firmado
+segip -> opssp : validación
+opssp->SSP : registra caso
+SSP->opssp : entrega formulario de registro
+opssp->pre : entrega formulario impreso para firma
+pre->opssp : entrega formulario firmado
 
 @enduml

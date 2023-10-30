@@ -13,6 +13,7 @@ pre -> opssp : reunion con operario
 opssp -> pre : solicita informacion
 pre -> opssp : entrega relación del hecho
 opssp -> pre : orientación
+opssp -> SSP : llena formulario
 opssp -> segip : envia de datos
 segip -> opssp : validación 
 opssp -> SSP : registra caso

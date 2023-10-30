@@ -1,0 +1,51 @@
+@startuml flujo del sistema
+start
+if (tipo de registro) then(Solicitud)
+  :Solicita Información al Peticionario;
+else (Oficio)
+  :Recopila Información;
+endif
+:Procesamiento de la Información del caso|
+:Registro de caso;
+-> Seleccion del Tipo proceso;
+split
+  :Investigación;
+  repeat
+  :Acciones Defensoriales;
+  if (Se requieren Acciones Especializadas) then (Si)
+    if(Derivación) then (Constitucional)
+      if(Validación) then (Si)
+        :Procesamiento del caso|
+        :Emisión Informe Defensorial;
+        :Emisión de Determinaciones;
+      else (No)
+      endif
+    else (Resolución Defensorial)
+      if(Validación) then (Si)
+        :Procesamiento del caso|
+        :Emisión Resolución Defensorial;
+        :Emisión de Determinaciones;
+      else (No)
+      endif
+    endif
+  else (No)
+  endif
+repeat while (Restitución del Derecho)
+split again
+  :Orientación;
+split again
+  :Gestión;
+split again
+  :Rechazo;
+end split
+repeat
+  :Solicitud de Conclusión del Caso;
+  backward:Observaciones;
+repeat while (Aprobado)
+:Conclusión del Caso;
+repeat
+  :Solicitud de Archivo del Caso;
+  backward:Observaciones;
+repeat while (Aprobado)
+:Archivo del Caso;
+@enduml

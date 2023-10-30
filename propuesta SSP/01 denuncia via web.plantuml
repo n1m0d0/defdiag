@@ -12,18 +12,21 @@ collections API_SEGIP as segip
 
 pre -> web : ingresa
 pre -> web : selecciona denuncia en línea
-web -> pre : habilita formulario
 pre -> web : llena formulario
 web -> segip : envia de datos
 segip -> web : validación 
 web->SSP : crea pre-registro
 SSP->web : notifica
-web->pre : Muestra Indicaciones
-pre->opssp : reunión con operario
+web->pre : presenta indicaciones
+SSP->opssp : notifica
 opssp->SSP : busca pre-registro
-SSP->opssp : Muestra informacion
+SSP->opssp : presenta información
+opssp->pre : concertar reunión
+pre->opssp: reunión con operario
+opssp->SSP : busca pre-registro
+SSP->opssp : presenta información
 opssp -> pre : solicita información complementaria
-pre->opssp : Brinda información
+pre->opssp : relación de hecho
 opssp->pre : orientación
 opssp->SSP : registra caso
 SSP->opssp : entrega formulario de registro

@@ -15,10 +15,4 @@ opssp->opssp:tareas de seguimiento
 opssp->sup:remite informe de cumplimiento de determinaciones
 sup->unid:envía informe
 
-
-
-
-
-
-
 @enduml

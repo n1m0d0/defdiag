@@ -16,7 +16,7 @@ sup->opssp: asigna
 opssp->pre:comunicación con presentante
 opssp->pre:concertar reunión
 pre->opssp:reunión con operario
-opssp -> pre : solicita informacion
+opssp -> pre : solicita información
 pre->opssp:relacion de hecho
 opssp->pre:orientacion de hecho
 opssp->SSP:registra caso
