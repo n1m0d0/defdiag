@@ -16,15 +16,15 @@ split
     if(Derivación) then (Constitucional)
       if(Validación) then (Si)
         :Procesamiento del caso|
-        :Emisión Informe Defensorial;
-        :Emisión de Determinaciones;
+        :Acciones Constitucionales;
+        :Determinaciones;
       else (No)
       endif
     else (Resolución Defensorial)
       if(Validación) then (Si)
         :Procesamiento del caso|
-        :Emisión Resolución Defensorial;
-        :Emisión de Determinaciones;
+        :Resolución Defensorial;
+        :Determinaciones;
       else (No)
       endif
     endif
@@ -48,4 +48,5 @@ repeat
   backward:Observaciones;
 repeat while (Aprobado)
 :Archivo del Caso;
+end
 @enduml
