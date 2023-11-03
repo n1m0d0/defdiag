@@ -22,7 +22,7 @@ opssp->SSP: registro de acciones defensoriales
 opssp->supssp: solicitud de seguimiento RD
 supssp->opssp: valida
 opssp->delecord: coordina
-opssp->delecord: envia informacion del caso
+opssp->delecord: envia informacion del caso 
 delecord->delecord: procesamiento de la solicitud
 delecord->supssp: resolución defensorial
 delecord->supssp: determinaciones
