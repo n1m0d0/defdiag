@@ -11,26 +11,28 @@ endif
 split
   :Investigación;
   repeat
-  :Acciones Defensoriales;
-  if (Se requieren Acciones Especializadas) then (Si)
-    if(Derivación) then (Constitucional)
-      if(Validación) then (Si)
-        :Procesamiento del caso|
-        :Acciones Constitucionales;
-        :Determinaciones;
-      else (No)
-      endif
-    else (Resolución Defensorial)
-      if(Validación) then (Si)
-        :Procesamiento del caso|
-        :Resolución Defensorial;
-        :Determinaciones;
-      else (No)
-      endif
+    :Acciones Defensoriales;
+    if (Se requieren Acciones Especializadas) then (Si)
+      partition Por_definir {
+        if(Derivación) then (Constitucional)
+          if(Validación) then (Si)
+            :Procesamiento del caso|
+            :Acciones Constitucionales;
+            :Determinaciones;
+          else (No)
+          endif
+        else (Resolución Defensorial)
+          if(Validación) then (Si)
+            :Procesamiento del caso|
+            :Resolución Defensorial;
+            :Determinaciones;
+          else (No)
+          endif
+        endif
+      }
+    else (No)
     endif
-  else (No)
-  endif
-repeat while (Restitución del Derecho)
+  repeat while (Restitución del Derecho)
 split again
   :Orientación;
 split again

@@ -7,27 +7,27 @@ mainframe **Denuncia** vía Whatsapp
 actor Presentante as pre
 collections Whatsapp
 entity Defensa as def
-collections Pagina_Web as web
 collections SSP 
+actor Supervisor_SSP as supssp
 actor Operador_SSP as opssp
 collections API_SEGIP as segip
-
 
 pre -> Whatsapp : envía mensaje inicial
 Whatsapp -> def : notifica
 def -> Whatsapp : solicita información
 Whatsapp->pre: notifica
 pre -> Whatsapp : envía información solicitada
-def -> web : ingresa
-def -> web : selecciona denuncia en línea
-def -> web : llena formulario
-web -> segip : envia de datos
-segip -> web : validación 
-web->SSP : crea pre-registro
-SSP->web : notifica
-web->def : presenta indicaciones
+def -> SSP : ingresa
+def -> SSP : llena formulario
+SSP -> segip : envia datos
+segip -> SSP : validación
+segip -> SSP: información
+SSP->SSP : crea pre-registro
+SSP->def : presenta indicaciones
 def->Whatsapp : comunica indicaciones
 Whatsapp->pre: notifica
+SSP->supssp : notifica
+supssp-> SSP : asigna caso
 SSP->opssp : notifica
 opssp->SSP : busca pre-registro
 SSP->opssp : presenta información
@@ -37,9 +37,9 @@ opssp->SSP : busca pre-registro
 SSP->opssp : presenta informacion
 opssp -> pre : solicita información complementaria
 pre->opssp : relación de hecho
-opssp->pre : orientación
 opssp->SSP : registra caso
 SSP->opssp : entrega formulario de registro
+opssp->pre : orientación
 opssp->pre : entrega formulario impreso para firma
 pre->opssp : entrega formulario firmado
 

@@ -19,7 +19,10 @@ opssp->SSP: registro de grupo vulnerable
 opssp->SSP: selección de tipo de proceso
 opssp->opssp: realiza acciones defensoriales
 opssp->SSP: registro de acciones defensoriales
-opssp->const: solicitud de consulta constitucional
+opssp->supssp: solicitud de consulta constitucional
+supssp->opssp: valida
+opssp->const: coordina
+opssp->const: envia informacion del caso
 const->const: procesamiento de la solicitud
 const->supssp: informe defensorial
 const->supssp: determinaciones

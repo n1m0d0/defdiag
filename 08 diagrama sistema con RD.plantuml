@@ -19,7 +19,10 @@ opssp->SSP: registro de grupo vulnerable
 opssp->SSP: selección de tipo de proceso
 opssp->opssp: realiza acciones defensoriales
 opssp->SSP: registro de acciones defensoriales
-opssp->delecord: solicitud de seguimiento RD
+opssp->supssp: solicitud de seguimiento RD
+supssp->opssp: valida
+opssp->delecord: coordina
+opssp->delecord: envia informacion del caso
 delecord->delecord: procesamiento de la solicitud
 delecord->supssp: resolución defensorial
 delecord->supssp: determinaciones

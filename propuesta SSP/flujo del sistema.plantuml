@@ -1,0 +1,32 @@
+@startuml flujo del sistema
+start
+:Pre registro;
+:Procesamiento de la Información del caso|
+:Recopila Información complementaria;
+:Registro de caso;
+-> Seleccion del Tipo proceso;
+split
+  :Investigación;
+  repeat
+    :Acciones Defensoriales;
+    if (Se requieren Acciones Especializadas) then (Si)
+      partition Por_definir {
+        :Procesamiento del Caso|
+      }
+    else (No)
+    endif
+  repeat while (Restitución del Derecho)
+split again
+  :Orientación;
+split again
+  :Gestión;
+split again
+  :Rechazo;
+end split
+repeat
+  :Solicitud de Conclusión del Caso;
+  backward:Observaciones;
+repeat while (Aprobado)
+:Conclusión del Caso;
+end
+@enduml

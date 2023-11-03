@@ -6,18 +6,18 @@ mainframe **Denuncia** en Oficinas
 
 actor Presentante as pre
 actor Operador_SSP as opssp
-collections API_SEGIP as segip
 collections SSP 
+collections API_SEGIP as segip
 
 pre -> opssp : reunion con operario
-opssp -> pre : solicita informacion
-pre -> opssp : entrega relación del hecho
-opssp -> pre : orientación
-opssp -> SSP : llena formulario
-opssp -> segip : envia de datos
-segip -> opssp : validación 
+opssp -> pre : solicita información
+pre -> opssp : relación del hecho
 opssp -> SSP : registra caso
+SSP -> segip : envia datos
+segip -> SSP : validación 
+segip -> SSP : información 
 SSP->opssp: entrega formulario de registro
+opssp -> pre : orientación
 opssp->pre: entrega formulario impreso para firma
 pre->opssp: entrega formulario firmado
 

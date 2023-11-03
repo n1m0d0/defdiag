@@ -1,0 +1,29 @@
+@startuml Diagrama_informes
+skinparam Style strictuml
+skinparam SequenceMessageAlignment center
+
+mainframe **Diagrama** Informes Defensoriales
+actor Operador_Unindad_Sustantiva as opeuni
+actor Supervisor_Unidad_Sustantiva as supuni
+collections SSP
+actor Supervisor_SSP as sup
+actor Operador_SSP as opssp
+
+opeuni->SSP: crea informe defensorial
+opeuni->SSP: sube informe
+opeuni->SSP: registra determinaciones
+SSP->supuni: notifica
+supuni->SSP: valida
+SSP->sup: notifica
+sup->SSP: asigana
+SSP->opssp: notifica
+SSP->opssp: presenta determinaciones
+opssp->opssp: procesa
+opssp->SSP:registra cumplimiento de determinaciones
+opssp->SSP: sube informe
+SSP->sup: notifica
+sup->SSP: valida
+SSP->supuni: notifica
+SSP->supuni: presenta informe determinacion cumplidas
+
+@enduml
