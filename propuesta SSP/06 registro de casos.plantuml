@@ -2,7 +2,7 @@
 skinparam Style strictuml
 skinparam SequenceMessageAlignment center
 
-mainframe **Diagrama** Sistema
+mainframe **Diagrama** Sistema para el Registro de Caso
 
 actor Operador_SSP as opssp
 collections SSP

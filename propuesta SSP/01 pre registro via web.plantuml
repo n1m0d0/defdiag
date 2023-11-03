@@ -4,7 +4,7 @@ skinparam SequenceMessageAlignment center
 
 mainframe **Denuncia** vía web
 
-actor Presentante as pre
+actor Denunciante as pre
 collections Pagina_web as web
 actor Supervisor_SSP as supssp
 actor Operador_SSP as opssp

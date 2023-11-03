@@ -4,7 +4,7 @@ skinparam SequenceMessageAlignment center
 
 mainframe **Denuncia** Escrita
 
-actor Presentante as pre
+actor Denunciante as pre
 entity Defensoría as def
 actor Supervisor as sup
 actor Operador_SSP as opssp
@@ -14,7 +14,7 @@ collections API_SEGIP as segip
 pre -> def : escribe carta
 def->sup :envía caso
 sup->opssp : designa
-opssp->pre : comunicación con presentante
+opssp->pre : comunicación con denunciante
 opssp->pre : concertar reunión
 pre->opssp : reunión con operario
 opssp -> pre : solicita informacion

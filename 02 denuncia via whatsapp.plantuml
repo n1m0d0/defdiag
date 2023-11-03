@@ -4,7 +4,7 @@ skinparam SequenceMessageAlignment center
 
 mainframe **Denuncia** vía Whatsapp
 
-actor Presentante as pre
+actor Denunciante as pre
 collections Whatsapp
 entity Defensa as def
 actor Supervisor as sup
@@ -21,7 +21,7 @@ Whatsapp->def: notifica
 def-> Whatsapp: envia caso
 Whatsapp->sup: notifica
 sup->opssp:asigna caso
-opssp->pre:comunicación con presentante
+opssp->pre:comunicación con denunciante
 opssp->pre:concertar reunión
 pre->opssp:reunión con operario
 opssp -> pre : solicita información

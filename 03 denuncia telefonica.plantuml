@@ -4,7 +4,7 @@ skinparam SequenceMessageAlignment center
 
 mainframe **Denuncia** vía Línea_Gratuita
 
-actor Presentante as pre
+actor Denunciante as pre
 collections Línea_Gratuita
 entity Defensa as def
 collections Whatsapp as wap
@@ -20,7 +20,7 @@ def->wap : envía caso
 wap->sup : notifica
 sup->wap : asigna caso
 wap->opssp : notifica
-opssp->pre:comunicación con presentante
+opssp->pre:comunicación con denunciante
 opssp->pre:concertar reunión
 pre->opssp:reunión con operario
 opssp -> pre : solicita información

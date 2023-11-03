@@ -2,7 +2,7 @@
 skinparam Style strictuml
 skinparam SequenceMessageAlignment center
 
-mainframe **Diagrama** Sistema
+mainframe **Diagrama** Sistema SSP con Intervención del Área Constitucional
 
 actor Operador_SSP as opssp
 collections SSP
@@ -11,7 +11,7 @@ actor Delegado_o_Cordinador as delcor
 entity Constitucional as const
 
 opssp->SSP: crear caso
-opssp->SSP: registro del peticionario
+opssp->SSP: registro del denunciante
 opssp->SSP: registro de institución 
 opssp->SSP: registro de archivo
 opssp->SSP: registro de derecho vulnerado

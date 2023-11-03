@@ -1,4 +1,6 @@
 @startuml flujo del sistema
+
+mainframe **Diagrama de Flujo** del Sistema SSP
 start
 if (tipo de registro) then(Solicitud)
   :Solicita Información al Peticionario;

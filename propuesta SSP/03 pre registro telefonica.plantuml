@@ -4,7 +4,7 @@ skinparam SequenceMessageAlignment center
 
 mainframe **Denuncia** vía Línea_Gratuita
 
-actor Presentante as pre
+actor Denunciante as pre
 collections Línea_Gratuita
 entity Defensa as def
 collections SSP 

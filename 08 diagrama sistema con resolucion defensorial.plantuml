@@ -2,16 +2,16 @@
 skinparam Style strictuml
 skinparam SequenceMessageAlignment center
 
-mainframe **Diagrama** Sistema
+mainframe **Diagrama** Sistema SSP con Resolución Defensorial
 
 actor Operador_SSP as opssp
 collections SSP
 actor Supervisor_SSP as supssp
-actor Delegado_o_Cordinador as delcor
-entity Delegación_o_cordinación as delecord
+actor Delegado_o_Coordinador as delcor
+entity Delegación_o_Coordinación as delecord
 
 opssp->SSP: crear caso
-opssp->SSP: registro del peticionario
+opssp->SSP: registro del denunciante
 opssp->SSP: registro de institución 
 opssp->SSP: registro de archivo
 opssp->SSP: registro de derecho vulnerado

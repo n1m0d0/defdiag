@@ -4,7 +4,7 @@ skinparam SequenceMessageAlignment center
 
 mainframe **Denuncia** en Oficinas
 
-actor Presentante as pre
+actor Denunciante as pre
 actor Operador_SSP as opssp
 collections SSP 
 collections API_SEGIP as segip

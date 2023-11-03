@@ -4,7 +4,7 @@ skinparam SequenceMessageAlignment center
 
 mainframe **Denuncia** vía Whatsapp
 
-actor Presentante as pre
+actor Denunciante as pre
 collections Whatsapp
 entity Defensa as def
 collections SSP 

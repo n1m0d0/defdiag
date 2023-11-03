@@ -4,7 +4,7 @@ skinparam SequenceMessageAlignment center
 
 mainframe **Denuncia** vía Web
 
-actor Presentante as pre
+actor Denunciante as pre
 collections Web
 actor Supervisor as sup
 actor Operador_SSP as opssp
@@ -16,7 +16,7 @@ pre -> Web : selecciona denuncia en línea
 pre -> Web : llena formulario
 Web->sup: envía correo
 sup->opssp:asigna caso
-opssp->pre:comunicación con presentante
+opssp->pre:comunicación con denunciante
 opssp->pre:concertar reunión
 pre->opssp:reunión con operario
 opssp -> pre : solicita información
