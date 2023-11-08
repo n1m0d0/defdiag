@@ -1,0 +1,22 @@
+@startuml Registrar Usuario
+skinparam Style strictuml
+skinparam SequenceMessageAlignment center
+
+mainframe **Registro** de Usuario
+
+actor Administrador_Sistema as admin
+collections SSP 
+collections API_Talento_Humano as tahu
+
+admin -> SSP : ingresa
+admin -> SSP : selecciona crear usuario
+admin -> SSP : introduce nombre del funcionario
+SSP -> tahu : busca
+tahu -> SSP : validación
+tahu -> SSP : información
+SSP -> admin : presenta la información
+admin -> SSP : crea usuario
+admin -> SSP : asigna un rol
+admin -> SSP : asigna unidad organizacional
+
+@enduml

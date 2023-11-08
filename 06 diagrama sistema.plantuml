@@ -11,10 +11,15 @@ actor Delegado_o_Coordinador as delcor
 
 opssp->SSP: crear caso
 opssp->SSP: registro del denunciante
+note over opssp, SSP: Se puede registrar, modificar y eliminar \n en cualquiermomento antes de la conclusion del caso
 opssp->SSP: registro de institución 
+note over opssp, SSP: Se puede registrar, modificar y eliminar \n en cualquiermomento antes de la conclusion del caso
 opssp->SSP: registro de archivo
+note over opssp, SSP: Se puede registrar, modificar y eliminar \n en cualquiermomento antes de la conclusion del caso
 opssp->SSP: registro de derecho vulnerado
+note over opssp, SSP: Se puede registrar, modificar y eliminar \n en cualquiermomento antes de la conclusion del caso
 opssp->SSP: registro de grupo vulnerable
+note over opssp, SSP: Se puede registrar, modificar y eliminar \n en cualquiermomento antes de la conclusion del caso
 opssp->SSP: selección de tipo de proceso
 opssp->opssp: realiza acciones defensoriales
 opssp->SSP: registro de acciones defensoriales
@@ -24,6 +29,5 @@ supssp->SSP: validación de conclusión del caso
 supssp->SSP: solicitud de archivo del caso
 SSP->delcor: notifica
 delcor->SSP: validación de archivo del caso
-
 
 @enduml

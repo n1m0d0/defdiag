@@ -1,0 +1,19 @@
+@startuml Dashboard
+skinparam Style strictuml
+skinparam SequenceMessageAlignment center
+
+mainframe **Dashboard**
+
+actor operador_ssp as opssp
+collections SSP 
+collections APIs_Defensoria as apidef
+
+opssp -> SSP : ingresa
+opssp -> SSP : selecciona dashboard
+SSP -> apidef : solicta información
+apidef -> SSP : envia información
+SSP -> opssp : presenta la información
+opssp -> SSP : seleciona exportar
+SSP -> opssp : entrega archivo
+
+@enduml
