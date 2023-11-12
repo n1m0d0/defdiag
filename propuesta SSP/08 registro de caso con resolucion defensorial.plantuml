@@ -7,14 +7,16 @@ mainframe **Diagrama** Sistema
 actor Operador_SSP as opssp
 collections SSP
 actor Supervisor_SSP as supssp
-actor Supervisor_Constitucional as supconsti
-actor Operador_Constitucional as opconsti
+actor Delegado_SSP as del
+collections API_SEGIP as segip
 collections AGETIC as agetic
 
 opssp->SSP: ingresa
-opssp->SSP: busca pre registros
-opssp->SSP: selecciona caso
+opssp->SSP: selecciona crear caso
 opssp->SSP: llena formulario
+SSP->segip: envia informacion
+segip->SSP: validacion
+segip->SSP: información
 SSP->SSP: registra caso
 SSP->agetic: envia formulario para su firma digital
 agetic->SSP: formulario firmado 
@@ -23,18 +25,18 @@ opssp->SSP: selecciona tipo de proceso
 opssp->SSP: registra el proceso
 opssp->SSP: seleciona acciones defensoriales
 opssp->SSP: registra acciones defensoriales
-opssp->SSP: selecciona enviar a consulta constitucional
-SSP->supconsti: notifica
-supconsti->SSP: seleciona caso
-supconsti->SSP: valida
-supconsti->SSP: designa operador constitucional
-SSP->opconsti: notifica
-opconsti->opconsti: procesa
-opconsti->SSP: selecciona caso
-opconsti->SSP: envia acciones constitucional
+opssp->SSP: selecciona enviar a resolución defensorial
+SSP->del: notifica
+del->SSP: seleciona caso
+del->SSP: valida
+del->del: procesa resolución defensorial
+del->SSP: envia resolución defensorial
+del->SSP: designa operador
 SSP->opssp: notifica
-opssp->SSP: selecciona acciones constitucional
-opssp->SSP: registra acciones constitucional
+opssp->opssp: procesa
+opssp->SSP: selecciona caso
+opssp->SSP: seguimiento a resolución defensorial
+opssp->SSP: registra seguimiento a resolución defensorial
 opssp->SSP: selcciona conclusión de caso
 SSP->supssp: muestra casos para conclusión
 supssp->SSP: selecciona caso

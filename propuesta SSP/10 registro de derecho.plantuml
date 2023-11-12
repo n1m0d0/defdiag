@@ -1,0 +1,18 @@
+@startuml Registrar_Derecho
+skinparam Style strictuml
+skinparam SequenceMessageAlignment center
+
+mainframe **Registro** de Derecho
+
+actor Administrador_Sistema as admin
+collections SSP 
+
+admin -> SSP : ingresa
+admin -> SSP : crear derecho
+admin -> SSP : codigo del derecho
+admin -> SSP : nombre del derecho
+admin -> SSP : nombre del tipo
+SSP -> SSP : registra
+SSP -> admin : notifica 
+
+@enduml

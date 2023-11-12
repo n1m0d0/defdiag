@@ -1,0 +1,20 @@
+@startuml Denuncia_web
+skinparam Style strictuml
+skinparam SequenceMessageAlignment center
+
+mainframe **Denuncia** vía web
+
+actor Supervisor_SSP as supssp
+collections SSP 
+actor Supervisor_Delegacion as supsspdel
+actor Operador_SSP as opssp
+
+supssp -> SSP : ingresa
+supssp -> SSP : busca caso
+supssp -> SSP : envia caso
+SSP -> supsspdel : notifica
+supsspdel -> SSP : acepta
+supsspdel -> SSP : asigna
+SSP -> opssp : notifica
+
+@enduml

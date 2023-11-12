@@ -15,8 +15,11 @@ SSP -> tahu : busca
 tahu -> SSP : validación
 tahu -> SSP : información
 SSP -> admin : presenta la información
+admin -> SSP : busca unidad organizacional
+SSP -> tahu : busca
+tahu -> SSP : validación
+tahu -> SSP : información
 admin -> SSP : crea usuario
 admin -> SSP : asigna un rol
-admin -> SSP : asigna unidad organizacional
 
 @enduml

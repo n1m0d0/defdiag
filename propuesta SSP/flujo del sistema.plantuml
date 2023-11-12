@@ -1,4 +1,4 @@
-@startuml flujo del sistema
+@startuml flujo_del_sistema
 start
 :Pre registro;
 :Procesamiento de la Información del caso|

@@ -1,0 +1,22 @@
+@startuml Diagrama_Capacitaciones
+skinparam Style strictuml
+skinparam SequenceMessageAlignment center
+
+mainframe **Diagrama** Capacitaciones
+actor Operador_Unindad_Sustantiva as opeuni
+collections SSP
+actor Supervisor_Unidad_Sustantiva as supuni
+
+opeuni->SSP: crear capacitación
+opeuni->SSP: crear temario
+opeuni->SSP: solicita de aprobación
+SSP->supuni: notifica
+supuni->SSP: valid
+SSP->opeuni: notifica
+opeuni->SSP: crear cronograma
+opeuni->SSP: solicita de aprobación
+SSP->supuni: notifica
+supuni->SSP: valid
+SSP->opeuni: notifica
+
+@enduml

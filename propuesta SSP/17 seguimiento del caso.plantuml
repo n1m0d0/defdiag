@@ -1,0 +1,20 @@
+@startuml Seguimiento
+skinparam Style strictuml
+skinparam SequenceMessageAlignment center
+
+mainframe **Seguimiento**
+
+actor operador_ssp as opssp
+collections SSP 
+
+opssp -> SSP : ingresa
+opssp -> SSP : busca caso
+SSP -> opssp : presenta la información del caso
+SSP -> opssp : presenta la información del operario asignado
+opssp -> SSP : seleciona acciones defensoriales
+SSP -> opssp : presenta la información de las acciones defensoriales y respaldos
+opssp -> SSP : seleciona acciones especializada
+note over opssp, SSP: Acciones como consulta constitucional y resoluciones defensoriales
+SSP -> opssp : presenta la información de las acciones especializadas
+
+@enduml

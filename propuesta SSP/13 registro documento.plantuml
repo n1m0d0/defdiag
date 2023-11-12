@@ -1,0 +1,17 @@
+@startuml Registrar_Documento
+skinparam Style strictuml
+skinparam SequenceMessageAlignment center
+
+mainframe **Registro** de Documento
+
+actor Administrador_Sistema as admin
+collections SSP 
+
+admin -> SSP : ingresa
+admin -> SSP : crear documento
+admin -> SSP : nombre del documento
+admin -> SSP : descricion del documento
+SSP -> SSP : registra
+SSP -> admin : notifica 
+
+@enduml

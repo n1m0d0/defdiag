@@ -1,0 +1,16 @@
+@startuml Registrar_Institución
+skinparam Style strictuml
+skinparam SequenceMessageAlignment center
+
+mainframe **Registro** de Institución
+
+actor Administrador_Sistema as admin
+collections SSP 
+
+admin -> SSP : ingresa
+admin -> SSP : crear institución
+admin -> SSP : nombre del institución
+SSP -> SSP : registra
+SSP -> admin : notifica 
+
+@enduml
