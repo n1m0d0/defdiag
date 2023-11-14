@@ -1,8 +1,8 @@
-@startuml Dashboard
+@startuml Dashboard de Reportes
 skinparam Style strictuml
 skinparam SequenceMessageAlignment center
 
-mainframe **Dashboard**
+mainframe **Diagrama** Reportes Sistema SSP
 
 actor operador_ssp as opssp
 collections SSP 
@@ -14,6 +14,6 @@ SSP -> apidef : solicta información
 apidef -> SSP : envia información
 SSP -> opssp : presenta la información
 opssp -> SSP : seleciona exportar
-SSP -> opssp : entrega archivo
+SSP -> opssp : entrega reportes
 
 @enduml

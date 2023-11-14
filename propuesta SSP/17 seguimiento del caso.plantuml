@@ -2,7 +2,7 @@
 skinparam Style strictuml
 skinparam SequenceMessageAlignment center
 
-mainframe **Seguimiento**
+mainframe **Diagrama** Seguimiento de Casos
 
 actor operador_ssp as opssp
 collections SSP 

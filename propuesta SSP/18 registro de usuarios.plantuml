@@ -2,7 +2,7 @@
 skinparam Style strictuml
 skinparam SequenceMessageAlignment center
 
-mainframe **Registro** de Usuario
+mainframe **Diagrama** Registro de Usuario
 
 actor Administrador_Sistema as admin
 collections SSP 

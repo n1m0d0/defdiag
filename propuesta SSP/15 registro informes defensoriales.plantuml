@@ -2,7 +2,7 @@
 skinparam Style strictuml
 skinparam SequenceMessageAlignment center
 
-mainframe **Diagrama** Informes Defensoriales
+mainframe **Diagrama** Registro de Informes Defensoriales
 actor Operador_Unindad_Sustantiva as opeuni
 actor Supervisor_Unidad_Sustantiva as supuni
 collections SSP

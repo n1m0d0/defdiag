@@ -2,7 +2,7 @@
 skinparam Style strictuml
 skinparam SequenceMessageAlignment center
 
-mainframe **Denuncia** vía web
+mainframe **Diagrama** Reasignación entre Delegaciones o Coordinaciones
 
 actor Supervisor_SSP as supssp
 collections SSP 

@@ -11,12 +11,12 @@ opeuni->SSP: crear capacitación
 opeuni->SSP: crear temario
 opeuni->SSP: solicita de aprobación
 SSP->supuni: notifica
-supuni->SSP: valid
+supuni->SSP: validar
 SSP->opeuni: notifica
 opeuni->SSP: crear cronograma
 opeuni->SSP: solicita de aprobación
 SSP->supuni: notifica
-supuni->SSP: valid
+supuni->SSP: validar
 SSP->opeuni: notifica
 
 @enduml
