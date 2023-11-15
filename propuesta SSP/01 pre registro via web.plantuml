@@ -2,7 +2,7 @@
 skinparam Style strictuml
 skinparam SequenceMessageAlignment center
 
-mainframe **Denuncia** vía web
+mainframe **Diagrama** Denuncia Vía Web
 
 actor Denunciante as pre
 collections Pagina_web as web

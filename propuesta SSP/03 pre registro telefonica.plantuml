@@ -2,7 +2,7 @@
 skinparam Style strictuml
 skinparam SequenceMessageAlignment center
 
-mainframe **Denuncia** vía Línea_Gratuita
+mainframe **Diagrama** Denuncia Vía Línea_Gratuita
 
 actor Denunciante as pre
 collections Línea_Gratuita

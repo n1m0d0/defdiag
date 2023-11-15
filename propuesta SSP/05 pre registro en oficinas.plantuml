@@ -2,7 +2,7 @@
 skinparam Style strictuml
 skinparam SequenceMessageAlignment center
 
-mainframe **Denuncia** en Oficinas
+mainframe **Diagrama** Denuncia en Oficinas
 
 actor Denunciante as pre
 actor Operador_SSP as opssp
