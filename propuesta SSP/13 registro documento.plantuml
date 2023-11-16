@@ -10,7 +10,7 @@ collections SSP
 admin -> SSP : ingresa
 admin -> SSP : crear documento
 admin -> SSP : nombre del documento
-admin -> SSP : descricion del documento
+admin -> SSP : descripción del documento
 SSP -> SSP : registra
 SSP -> admin : notifica 
 

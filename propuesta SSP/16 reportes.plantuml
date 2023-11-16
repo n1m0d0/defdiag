@@ -13,7 +13,7 @@ opssp -> SSP : selecciona dashboard
 SSP -> apidef : solicta información
 apidef -> SSP : envia información
 SSP -> opssp : presenta la información
-opssp -> SSP : seleciona exportar
+opssp -> SSP : selecciona exportar
 SSP -> opssp : entrega reportes
 
 @enduml

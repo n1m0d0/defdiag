@@ -21,11 +21,11 @@ agetic->SSP: formulario firmado
 SSP->opssp: notifica
 opssp->SSP: selecciona tipo de proceso
 opssp->SSP: registra el proceso
-opssp->SSP: seleciona acciones defensoriales
+opssp->SSP: selecciona acciones defensoriales
 opssp->SSP: registra acciones defensoriales
 opssp->SSP: selecciona enviar a consulta constitucional
 SSP->supconsti: notifica
-supconsti->SSP: seleciona caso
+supconsti->SSP: selecciona caso
 supconsti->SSP: valida
 supconsti->SSP: designa operador constitucional
 SSP->opconsti: notifica
@@ -42,7 +42,7 @@ SSP->supssp: muestra caso
 supssp->SSP: validad
 SSP->SSP: registra conclusión
 SSP->opssp: notifica
-opssp->SSP: seleciona formulario de conclusión
+opssp->SSP: selecciona formulario de conclusión
 SSP->agetic: envia formulario para su firma digital
 agetic->SSP: formulario firmado
 SSP->opssp: notifica
