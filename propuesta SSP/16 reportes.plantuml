@@ -4,7 +4,7 @@ skinparam SequenceMessageAlignment center
 
 mainframe **Diagrama** Reportes Sistema SSP
 
-actor operador_ssp as opssp
+actor Operador_SSP as opssp
 collections SSP 
 collections APIs_Defensoria as apidef
 
