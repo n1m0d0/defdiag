@@ -1,32 +1,44 @@
 @startuml flujo_del_sistema
 start
-:Pre registro;
-:Procesamiento de la Información del caso|
-:Recopila Información complementaria;
+:Denuncia;
+split
+  :Oficinas;
+  :Atención del caso|
+split again
+  :Otros medios;
+  :Pre registro;
+end split
 :Registro de caso;
 -> Seleccion del Tipo proceso;
 split
   :Investigación;
-  repeat
-    :Acciones Defensoriales;
-    if (Se requieren Acciones Especializadas) then (Si)
-      partition Por_definir {
-        :Procesamiento del Caso|
-      }
+  :Acciones Defensoriales;
+  if (Se requieren Acciones Especializadas) then (Si)
+    if (Es un proceso constitucional) then (Si)
+      :Registro;
+      :Procesamiento del Caso|
+      :Acciones constitucionales;
     else (No)
+      :Procesamiento del Caso|
+      :Resolución Defensorial;
+      :Seguimiento de Resolución Defensorial;
     endif
-  repeat while (Restitución del Derecho)
+  else (No)
+  endif
 split again
   :Orientación;
+  :Atención|
+  :Registro;
 split again
   :Gestión;
+  :Atención|
+  :Registro;
 split again
   :Rechazo;
+  :Atención|
+  :Registro;
 end split
-repeat
-  :Solicitud de Conclusión del Caso;
-  backward:Observaciones;
-repeat while (Aprobado)
+:Solicitud de Conclusión del Caso;
 :Conclusión del Caso;
 end
 @enduml

@@ -1,0 +1,17 @@
+@startuml Registrar_Forma
+skinparam Style strictuml
+skinparam SequenceMessageAlignment center
+
+mainframe **Registro** de Forma de Conclución
+
+actor Administrador_Sistema as admin
+collections SSP 
+
+admin -> SSP : ingresa
+admin -> SSP : crear forma
+admin -> SSP : codigo del grupo
+admin -> SSP : nombre del grupo
+SSP -> SSP : registra
+SSP -> admin : notifica 
+
+@enduml

@@ -1,0 +1,23 @@
+@startuml Diagrama_Alertas
+skinparam Style strictuml
+skinparam SequenceMessageAlignment center
+
+mainframe **Diagrama** Alertas
+actor Operador_Unindad_Difusión as opedif
+collections SSP
+actor Supervisor_Unidad_defensa as supdef
+actor Supervisor_SSP as supssp
+actor Operador_SSP as opssp
+
+opedif->SSP: crear alerta
+opedif->SSP: solicita de aprobación
+SSP->supdef: notifica
+supdef->SSP: valid
+supdef->SSP: asigna
+SSP->supssp: notifica
+supssp->SSP: seleciona alerta
+supssp->SSP: asigna
+SSP->opssp: notifica
+opssp->SSP: registra caso
+
+@enduml
