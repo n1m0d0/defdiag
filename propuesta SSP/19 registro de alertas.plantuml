@@ -3,19 +3,19 @@ skinparam Style strictuml
 skinparam SequenceMessageAlignment center
 
 mainframe **Diagrama** Alertas
-actor Operador_Unindad_Difusión as opedif
+actor Operador_Unidad_Difusión as opedif
 collections SSP
-actor Supervisor_Unidad_defensa as supdef
+actor Supervisor_Unidad_Defensa as supdef
 actor Supervisor_SSP as supssp
 actor Operador_SSP as opssp
 
 opedif->SSP: crear alerta
-opedif->SSP: solicita de aprobación
+opedif->SSP: solicita aprobación
 SSP->supdef: notifica
-supdef->SSP: valid
+supdef->SSP: valida
 supdef->SSP: asigna
 SSP->supssp: notifica
-supssp->SSP: seleciona alerta
+supssp->SSP: selecciona alerta
 supssp->SSP: asigna
 SSP->opssp: notifica
 opssp->SSP: registra caso

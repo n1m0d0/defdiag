@@ -25,7 +25,7 @@ opssp->SSP: selecciona tipo de proceso
 opssp->SSP: registra el proceso
 opssp->SSP: selecciona acciones defensoriales
 opssp->SSP: registra acciones defensoriales
-opssp->SSP: selcciona conclusión de caso
+opssp->SSP: selecciona conclusión de caso
 SSP->supssp: notifica
 SSP->supssp: presenta el caso
 supssp->SSP: validad

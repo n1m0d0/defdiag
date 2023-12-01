@@ -2,7 +2,7 @@
 skinparam Style strictuml
 skinparam SequenceMessageAlignment center
 
-mainframe **Diagrama** Sistema con Resolución Defensorial y Pre-registro
+mainframe **Diagrama** Sistema con Resolución Defensorial con Pre-registro
 
 actor Operador_SSP as opssp
 collections SSP
@@ -34,7 +34,7 @@ opssp->opssp: procesa
 opssp->SSP: selecciona caso
 opssp->SSP: seguimiento a resolución defensorial
 opssp->SSP: registra seguimiento a resolución defensorial
-opssp->SSP: selcciona conclusión de caso
+opssp->SSP: selecciona conclusión de caso
 SSP->supssp: muestra casos para conclusión
 supssp->SSP: selecciona caso
 SSP->supssp: muestra caso

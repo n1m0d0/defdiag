@@ -43,7 +43,7 @@ SSP->supconsti: notifica
 supconsti->SSP: seleciona caso
 supconsti->SSP: valida
 SSP->opssp: notifica
-opssp->SSP: selcciona conclusión de caso
+opssp->SSP: selecciona conclusión de caso
 SSP->supssp: muestra casos para conclusión
 supssp->SSP: selecciona caso
 SSP->supssp: muestra caso
